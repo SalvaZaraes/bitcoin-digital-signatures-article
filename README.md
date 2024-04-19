@@ -17,3 +17,8 @@ Besides the Python codes, I have also written several articles related to Bitcoi
   > #### English Version: https://estudiobitcoin.com/elliptic-curve-in-bitcoin/
   > #### Spanish Version: https://estudiobitcoin.com/curva-eliptica-en-bitcoin/
 
+2. Digital Signatures in Bitcoin
+
+  > #### English Version: 
+  > #### Spanish Version: 
+
