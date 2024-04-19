@@ -9,6 +9,7 @@ def generate_keys():
     private_key = secrets.randbits(256)
     sk = ecdsa.SigningKey.from_string(private_key.to_bytes(32, "big"), SECP256k1)
     sk_int = int.from_bytes(sk.to_string(), "big")
+    generator_point = ellipticcurve.Point(SECP256k1.curve, SECP256k1.generator.x(), SECP256k1.generator.y(), SECP256k1.order)
     return sk, generator_point, sk_int
 
 
