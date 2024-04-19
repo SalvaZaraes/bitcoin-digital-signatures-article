@@ -1,6 +1,6 @@
 import hashlib
 import secrets
-import ecdsa
+import ecdsa #0.18.0
 from ecdsa import SECP256k1, ellipticcurve
 
 
@@ -29,10 +29,8 @@ def print_keys(key):
     return printable_key
 
 
-def sign_message(private_key, message_hash, generator_point):
+def sign_message(private_key, message_hash, generator_point, random_key):
     """Signs a message."""
-    random_key = secrets.randbelow(SECP256k1.order)
-    print(f'\nThe value of RandomKey= {random_key}')
     R = random_key * generator_point
     r = R.x() % SECP256k1.order
     sk_int = int.from_bytes(private_key.to_string(), byteorder="big")
@@ -42,17 +40,11 @@ def sign_message(private_key, message_hash, generator_point):
     return r, s
 
 
-def verify_signature_interactive(generator_point):
-    """Verifies a signature with user input."""
-    # User inputs
-    public_key_input = input("Enter the public key: ")
-    r_input = int(input("Enter the value of r: "))
-    s_input = int(input("Enter the value of s: "))
-    verification_message = input("Enter the message for verification: ")
-
+def verify_signature(public_key, r_input, s_input, generator_point, verification_message):
+    """Verifies a signature."""
     # Convert the public key input from decimal to a point on the elliptic curve
-    pk_x = int(public_key_input[:64], 16)
-    pk_y = int(public_key_input[64:], 16)
+    pk_x = int(public_key[:64], 16)
+    pk_y = int(public_key[64:], 16)
 
     # Check if the point is on the curve
     if not SECP256k1.curve.contains_point(pk_x, pk_y):
@@ -74,10 +66,7 @@ def verify_signature_interactive(generator_point):
     u2PK = u2 * public_key.pubkey.point
     v = (u1G + u2PK).x() % SECP256k1.order
 
-    print(f'\nThe value of v= {v}')
-
-    # Print verification result
-    print("\nThe signature is valid, v is equal to r. Therefore, the private key used to derive the public key is the same one that was used to sign the message." if v == r_input else "\nThe signature is not valid, v is not equal to r")
+    return v
 
 
 if __name__ == "__main__":
@@ -88,9 +77,20 @@ if __name__ == "__main__":
     print("\nProcess: Signing\n")
     message = input("Enter the message to sign: ")
     message_hash = hash_message(message)
-    r, s = sign_message(sk, message_hash, g)
-    print(f"\nSignature: (r= {r}, s= {s})\n\n")
+    random_key = secrets.randbelow(SECP256k1.order)
+    r, s = sign_message(sk, message_hash, g, random_key)
+    print(f"\nSignature: (r= {hex(r)[2:]}, s= {hex(s)[2:]})\n\n")
 
     # New interactive verification process
     print("\nProcess: Verifying\n")
-    verify_signature_interactive(g)
+    public_key_input = input("Enter the public key: ")
+    r_input = int(input("Enter the value of r: "), base=16)
+    s_input = int(input("Enter the value of s: "), base=16)
+    verification_message = input("Enter the message for verification: ")
+
+    v = verify_signature(public_key_input, r_input, s_input, g, verification_message)
+    print(f'\nThe value of v= {hex(v)[2:]}')
+
+    # Print verification result
+    print("\nThe signature is valid, v is equal to r. Therefore, the private key used to derive the public key is the same one that was used to sign the message." if v == r_input else "\nThe signature is not valid, v is not equal to r")
+    
