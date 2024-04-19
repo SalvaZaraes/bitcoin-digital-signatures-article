@@ -1,6 +1,6 @@
 import hashlib
 import secrets
-import ecdsa #0.18.0
+import ecdsa #0.18.0/0.19.0
 from ecdsa import SECP256k1, ellipticcurve
 
 
