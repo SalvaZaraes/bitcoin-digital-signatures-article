@@ -52,7 +52,7 @@ def verify_signature(public_key, r_input, s_input, generator_point, verification
         return
 
     public_key_point = ellipticcurve.Point(SECP256k1.curve, pk_x, pk_y, SECP256k1.order)
-    public_key = ecdsa.VerifyingKey.from_public_point(public_key_point, curve=SECP256k1)
+    public_key2 = ecdsa.VerifyingKey.from_public_point(public_key_point, curve=SECP256k1)
 
     # Hash the message
     verification_hash = hash_message(verification_message)
@@ -63,7 +63,7 @@ def verify_signature(public_key, r_input, s_input, generator_point, verification
     u1 = (message_hash_int * c) % SECP256k1.order
     u2 = (r_input * c) % SECP256k1.order
     u1G = u1 * generator_point
-    u2PK = u2 * public_key.pubkey.point
+    u2PK = u2 * public_key2.pubkey.point
     v = (u1G + u2PK).x() % SECP256k1.order
 
     return v
