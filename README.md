@@ -2,7 +2,7 @@
 
 Bitcoin is a decentralized digital currency that enables online payments between parties without going through a central authority like a bank or government. Created by Satoshi Nakamoto in 2008.
 
-This repository includes Python scripts demonstrating different technical aspects of Bitcoin.
+This repository includes Python scripts demonstrating how digital signatures work in Bitcoin, following the explanations in this article: (Link).
 
 Bitcoin is the money of the future.
 
