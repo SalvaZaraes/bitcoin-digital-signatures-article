@@ -20,8 +20,8 @@ def generate_keys():
 
 
 def hash_message(message):
-    """Hashes a message using SHA-256."""
-    return hashlib.sha256(message.encode('utf-8')).digest()
+    """Hashes a message using double SHA-256."""
+    return hashlib.sha256(hashlib.sha256(message.encode('utf-8')).digest()).digest()
 
 def print_keys(key):
     """Changes the format of a key to print it in Hexadecimal"""
