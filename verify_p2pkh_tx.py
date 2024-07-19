@@ -179,6 +179,8 @@ def verify_signature(public_key, r_input, s_input, message_hash_int):
 
 
 if __name__ == "__main__":
+    #ONLY WORKS WITH TRANSACTIONS OF ONE INPUT AND ONE OUTPUT, BOTH P2PKH.
+    
     tx_hex = input("Input the TX in hex format: \n")
     input_address = input("\nInput the P2PKH address where the funds are being spent from: \n")
 
