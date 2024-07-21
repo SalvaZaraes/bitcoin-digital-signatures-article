@@ -81,7 +81,6 @@ if __name__ == "__main__":
     r, s = sign_message(sk, message_hash, g, random_key)
     print(f"\nSignature: (r= {hex(r)[2:]}, s= {hex(s)[2:]})\n\n")
 
-    # New interactive verification process
     print("\nProcess: Verifying\n")
     public_key_input = input("Enter the public key: ")
     r_input = int(input("Enter the value of r: "), base=16)
