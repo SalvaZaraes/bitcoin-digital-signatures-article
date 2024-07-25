@@ -206,6 +206,8 @@ if __name__ == "__main__":
     #04
     #input_address = "1Po1oWkD2LmodfkBYiAktwh76vkF93LKnh"
 
+    print("\nData extracted from the Transaction:")
+    
     r_extracted, r_extracted_int, s_extracted, s_extracted_int, sighash_extracted, pub_extracted = extract_data(tx_hex)
     print(f"\nr: {r_extracted}")
     print(f"s: {s_extracted}")
