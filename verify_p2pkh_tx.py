@@ -233,5 +233,11 @@ if __name__ == "__main__":
         uncompressed = pub_extracted[2:]
         print(f"The PubKey was already uncompressed: {uncompressed}")
 
+    print("\nVERIFICATION: with the values of the signature (r and s), the uncompressed public key and the double hash of the transaction")
+
     v_int = verify_signature(uncompressed, r_extracted_int, s_extracted_int, proto_tx_hash_int)
+
+    print(f"\nv: {hex(v_int)[2:]}")
+    print(f"\nr: {r_extracted}")
+
     print("\nOP_CHECKSIG: The signature is valid, v is equal to r. Therefore, the private key used to derive the public key (where the funds are being spent from) is the same one that was used to sign the transaction." if v_int == r_extracted_int else "Invalid Transaction")
