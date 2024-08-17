@@ -1,4 +1,4 @@
-# "Digital Signatures in Bitcoin Article Python" Codes
+# "Digital Signatures in Bitcoin" Article Python Codes
 
 Bitcoin is a decentralized digital currency that enables online payments between parties without going through a central authority like a bank or government. Created by Satoshi Nakamoto in 2008.
 
