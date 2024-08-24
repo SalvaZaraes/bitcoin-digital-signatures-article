@@ -25,7 +25,8 @@ Besides the Python codes, I have also written several articles related to Bitcoi
 
 ## Tx & HashPreimage Breakdown / Desglose
 [Tx & HashPreimage Breakdown.md](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/Tx%20%26%20HashPreimage%20Breakdown.md)
-[Tx & HashPreimage Desglose.md](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/Tx%20%26%20HashPreimage%20Desglose.md))
+
+[Tx & HashPreimage Desglose.md](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/Tx%20%26%20HashPreimage%20Desglose.md)
 
 Both Markdown format text documents divide a transaction and its hash-preimage in every part of it, with the corresponding explanations; avaliable in English and Spanish.
 
