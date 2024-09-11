@@ -46,8 +46,8 @@ This Python script demonstrates how the k value reuse attack/vulnerability is pe
 
 This Python script demonstrates the steps a Bitcoin node follows to verify a transaction with one P2PKH input and one P2PKH output. It extracts the signature values (r, s), validates that the hashed public key matches the PubKeyHash from which funds are being spent, and finally verifies the signature by reconstructing the original proto-transaction. The script then double-hashes this proto-transaction and checks, with the signature, if the calculated v value from the ECDSA process matches the r value, ensuring that the signature is valid and that the transaction was signed by the correct private key.
 
-## Images
-[verify-p2pkh-tx.py](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/verify-p2pkh-tx.py)
-[verify-p2pkh-tx.py](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/verify-p2pkh-tx.py)
-[verify-p2pkh-tx.py](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/verify-p2pkh-tx.py)
+## Images (under MIT License)
+[Cover Image](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/cover_image.png)
+[Visual 1](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/visual1.png)
+[Visual 2](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/visual2.png)
 
