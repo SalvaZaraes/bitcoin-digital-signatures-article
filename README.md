@@ -46,6 +46,11 @@ This Python script demonstrates how the k value reuse attack/vulnerability is pe
 
 This Python script demonstrates the steps a Bitcoin node follows to verify a transaction with one P2PKH input and one P2PKH output. It extracts the signature values (r, s), validates that the hashed public key matches the PubKeyHash from which funds are being spent, and finally verifies the signature by reconstructing the original proto-transaction. The script then double-hashes this proto-transaction and checks, with the signature, if the calculated v value from the ECDSA process matches the r value, ensuring that the signature is valid and that the transaction was signed by the correct private key.
 
+## Verify Tx with Multiple Inputs and Outputs
+[verify-tx-n-inputs-n-outputs.py](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/verify-tx-n-inputs-n-outputs.py)
+
+This Python script provides a comprehensive approach to verifying Bitcoin transactions with multiple inputs (P2PKH and/or P2PK) and outputs by reconstructing preimages tailored to each input. It offers functions to extract key transaction components, such as getlocktime() for locktime, getValues() for parsing signature data (r, s, SigHash and Public Key), and getPreimage() to generate the unique preimage for each input. With verify_transaction(), it validates that each input's signature was signed by the corresponding private key.
+
 ## Images (under MIT License)
 [Cover Image](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/cover_image.png)
 [Visual 1](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/visual1.png)
