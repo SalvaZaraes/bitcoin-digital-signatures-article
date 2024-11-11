@@ -19,7 +19,7 @@ Transaction HEX:
 
 - ScriptSig - Unlocking Script
     - 6b – Length of the ScriptSig (214 characters)
-    - 48 – Length of the signature within the ScriptSig (144 characters)
+    - 48 – Length of the signature within the ScriptSig (144 characters) - OP_PUSH72
     - 30 – Indicates that the signature encoding is DER (ASN.1)
     - 45 – Length of the Signature values (138 characters)
     - 02 – Indicates that r is an integer value
@@ -29,7 +29,7 @@ Transaction HEX:
     - 20 – Length of s (64 characters)
     - 332331d6d5c2c63db6174465aba6b848a4230ce943cffcf77ffdc02a30a8fbd7 – s
     - 01 – HashType, in this case SIGHASH ALL
-    - 21 – Length of the Public Key (66 characters)
+    - 21 – Length of the Public Key (66 characters) - OP_PUSH33
     - 020ce5eb2757373d469b59c971a498df4cf2484d52ef875024f1d924d22a0cc17c – Compressed Public Key
 
 - ffffffff – Sequence
