@@ -19,7 +19,7 @@ Transacción HEX:
 
 - ScriptSig - Unlocking Script
 	- 6b – Longitud del ScriptSig (214 caracteres)
-	- 48 – Longitud de la firma dentro del ScriptSig (144 caracteres)
+	- 48 – Longitud de la firma dentro del ScriptSig (144 caracteres) - OP_PUSH72
 	- 30 – Indica que la codificación de la firma es DER (ASN.1)
 	- 45 – Longitud de los valores de la Firma (138 caracteres)
 	- 02 – Indica que r es un valor entero
@@ -29,7 +29,7 @@ Transacción HEX:
 	- 20 – Longitud de s (64 caracteres)
 	- 332331d6d5c2c63db6174465aba6b848a4230ce943cffcf77ffdc02a30a8fbd7 – s
 	- 01 – HashType, en este caso SIGHASH ALL
-	- 21 – Longitud de la Clave Pública (66 caracteres)
+	- 21 – Longitud de la Clave Pública (66 caracteres) - OP_PUSH33
 	- 020ce5eb2757373d469b59c971a498df4cf2484d52ef875024f1d924d22a0cc17c – Clave Pública comprimida
 
 - ffffffff – Secuencia
