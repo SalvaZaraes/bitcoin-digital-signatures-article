@@ -21,6 +21,11 @@ Besides the Python codes, I have also written several articles related to Bitcoi
   > #### English Version: 
   > #### Spanish Version: https://estudiobitcoin.com/firmas-digitales-en-bitcoin/
 
+3. Malleability in Bitcoin
+
+  > #### English Version: 
+  > #### Spanish Version: 
+
 ***
 
 ## Tx & HashPreimage Breakdown / Desglose
