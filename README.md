@@ -28,6 +28,12 @@ Besides the Python codes, I have also written several articles related to Bitcoi
 
 ***
 
+## Verify Tx with Any Number of Inputs, Any Number of Outputs and Any Type of SigHash Flag (Only Compatible with P2PK and P2PKH scripts.)
+[VerifyTx-nIn-nOut-anySigHash.py](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/VerifyTx-nIn-nOut-anySigHash.py)
+
+In addition to prior versions of this code, now it can handle any type of SigHash flag, allowing the user to verify and dive into more transactions.
+One of the main functions in the code is getPreimage() which returns the Hash-Preimage of the designated input. This function was the main improvement in the code when compared to previous versions.
+
 ## Tx & HashPreimage Breakdown / Desglose
 [Tx & HashPreimage Breakdown.md](https://github.com/SalvaZaraes/bitcoin-digital-signatures-article/blob/main/Tx%20%26%20HashPreimage%20Breakdown.md)
 
