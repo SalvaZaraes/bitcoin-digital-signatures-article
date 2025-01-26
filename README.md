@@ -24,7 +24,7 @@ Besides the Python codes, I have also written several articles related to Bitcoi
 3. Malleability in Bitcoin
 
   > #### English Version: 
-  > #### Spanish Version: 
+  > #### Spanish Version: https://estudiobitcoin.com/maleabilidad-en-bitcoin/
 
 ***
 
